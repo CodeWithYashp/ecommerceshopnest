@@ -77,7 +77,10 @@ exports.resetPasswordRequest = async (req, res) => {
     user.resetPasswordToken = token;
     await user.save();
     const resetPageLink =
-      "http://localhost:3000/reset-password?token=" + token + "&email=" + email;
+      "https://yash-ecommerceshopnest.vercel.app/reset-password?token=" +
+      token +
+      "&email=" +
+      email;
     const subject = "Reset Password for ShopNest";
     const html = `<p>Click <a href=${resetPageLink}>here</a> to Reset Your Password</p>`;
     if (email) {
